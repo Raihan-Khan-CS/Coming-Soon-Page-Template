@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Visa Bangla - Coming Soon</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-d8Sf4mH5od78JzXnO3+fcxq2pefKXeJ0+JzQGm1XZMvX1lC7lvTpwKz3mwCcNt+L3hTn1ZwvtfRzAeMzKPqMAQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background-color: #283593;
+			color: #fff;
+			font-family: Arial, sans-serif;
+		}
+
+		.container {
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.logo img {
+			width: 200px;
+			height: auto;
+			margin-bottom: 50px;
+		}
+
+		.countdown {
+			text-align: center;
+		}
+
+		.countdown h1 {
+			font-size: 3rem;
+			margin-bottom: 20px;
+		}
+
+		.countdown p {
+			font-size: 1.2rem;
+			margin-bottom: 50px;
+		}
+
+		.countdown-item {
+			display: inline-block;
+			margin-right: 20px;
+		}
+
+		.countdown-number {
+			font-size: 2rem;
+			font-weight: bold;
+		}
+
+		.countdown-label {
+			display: block;
+			font-size: 1.2rem;
+			margin-top: 5px;
+		}
+
+		@media only screen and (max-width: 768px) {
+			.countdown h1 {
+				font-size: 2rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="logo">
+			<img src="VisaBangla.png" alt="Visa Bangla Logo">
+		</div>
+		<div class="countdown">
+			<h1>Visa Bangla - Coming Soon</h1>
+			<p>We are working hard to bring you the best experience</p>
+			<div id="countdown-clock">
+				<div class="countdown-item">
+					<span class="countdown-number" id="days"></span>
+					<span class="countdown-label">days</span>
+				</div>
+				<div class="countdown-item">
+					<span class="countdown-number" id="hours"></span>
+					<span class="countdown-label">hours</span>
+				</div>
+				<div class="countdown-item">
+					<span class="countdown-number" id="minutes"></span>
+					<span class="countdown-label">minutes</span>
+				</div>
+				<div class="countdown-item">
+					<span class="countdown-number" id="seconds"></span>
+					<span class="countdown-label">seconds</span>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("May 30, 2023 00:00:00").getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+
+	  // Get today's date and time
+	  var now = new Date().getTime();
+
+	  // Find the distance between now and the count down date
+	  var distance = countDownDate - now;
+
+	  // Time calculations for days, hours, minutes and seconds
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	  // Display the result in the element with corresponding ID
+	  document.getElementById("days").innerHTML = days;
+	  document.getElementById("hours").innerHTML = hours;
+	  document.getElementById("minutes").innerHTML = minutes;
+	  document.getElementById("seconds").innerHTML = seconds;
+
+	  // If the count down is finished, display text
+	  if (distance < 0) {
+	    clearInterval(x);
+	    document.getElementById("countdown-clock").innerHTML = "<p>We are now live!</p>";
+	  }
+	}, 1000);
+</script>
+
+
+</body>
+</html>
+				
